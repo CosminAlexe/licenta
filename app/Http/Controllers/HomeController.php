@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Internship;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,6 +24,12 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $user = auth()->user();
+
+        if($user->userType->type === 'Student');
+        {
+            $internships = Internship::all();
+            return view('homeStudent')->with(array('internships' => $internships));
+        }
     }
 }
