@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
+use App\City;
 use App\Internship;
 use Illuminate\Http\Request;
 
@@ -22,14 +24,19 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+    public function verifyUserType()
     {
         $user = auth()->user();
 
-        if($user->userType->type === 'Student');
+
+        if($user->userType->type === 'Student')
         {
-            $internships = Internship::all();
-            return view('homeStudent')->with(array('internships' => $internships));
+            return redirect()->route('studentHome');
+        }
+
+        if($user->userType->type === 'Employer')
+        {
+            return redirect()->route('employerHome');
         }
     }
 }

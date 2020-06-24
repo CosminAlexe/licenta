@@ -18,6 +18,17 @@ Route::get('/', function () {
 });
 
 Auth::routes();
+Route::get('/logout', 'Auth\LoginController@logout');
 
-Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/main-page', 'HomeController@index')->name('mainPage');
+
+Route::get('/home', 'HomeController@verifyUserType')->name('home');
+
+Route::get('/student-home', 'StudentController@index')->name('studentHome');
+Route::get('/student-show-internship/{id}', 'StudentController@showInternship')->name('studentShowInternship');
+Route::get('/student-apply/{id}', 'StudentController@applyForInternship')->name('studentApplyForInternship');
+
+Route::get('/employer-home', 'EmployerController@index')->name('employerHome');
+Route::get('/employer-show-internship/{id}', 'EmployerController@showInternship')->name('employerShowInternship');
+
+
+

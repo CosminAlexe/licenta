@@ -47,9 +47,7 @@ class User extends Authenticatable
 
     public function appliedInternships()
     {
-        return $this->belongsToMany('App\Internships')
-            ->withPivot('internship_user', 'status')
-            ->withTimestamps();
+        return $this->belongsToMany('App\Internships', 'internship_student');
     }
 
     public function userType()
