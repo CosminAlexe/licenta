@@ -21,7 +21,7 @@ class InternshipSeeder extends Seeder
             'start_date' => Carbon::parse('08/08/2020'),
             'end_date' => Carbon::parse('08/09/2020'),
             'salary' => 1800,
-            'user_id' => 1,
+            'user_id' => 3,
             'category_id' => 1,
             'city_id' => 1,
         ]);
@@ -34,7 +34,7 @@ class InternshipSeeder extends Seeder
             'start_date' => Carbon::parse('08/08/2020'),
             'end_date' => Carbon::parse('08/09/2020'),
             'salary' => 1200,
-            'user_id' => 1,
+            'user_id' => 3,
             'category_id' => 4,
             'city_id' => 1,
         ]);
@@ -47,7 +47,7 @@ class InternshipSeeder extends Seeder
             'start_date' => Carbon::parse('08/08/2020'),
             'end_date' => Carbon::parse('08/09/2020'),
             'salary' => 1200,
-            'user_id' => 1,
+            'user_id' => 3,
             'category_id' => 4,
             'city_id' => 2,
         ]);

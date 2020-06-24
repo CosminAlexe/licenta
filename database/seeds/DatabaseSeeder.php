@@ -17,9 +17,6 @@ class DatabaseSeeder extends Seeder
         $this->call(CitySeeder::class);
         $this->call(InternshipSeeder::class);
         $this->call(InternshipStudentSeeder::class);
-
-
-
-
+        $this->call(StudentProfileSeeder::class);
     }
 }

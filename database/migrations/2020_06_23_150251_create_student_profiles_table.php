@@ -17,6 +17,12 @@ class CreateStudentProfilesTable extends Migration
             $table->id();
             $table->foreignId('user_id');
             $table->foreign('user_id')->references('id')->on('users');
+            $table->string('faculty')->nullable();
+            $table->string('current_year')->nullable();
+            $table->string('skills')->nullable();
+            $table->string('foreign_languages')->nullable();
+            $table->longText('experience')->nullable();
+            $table->longText('projects')->nullable();
             $table->timestamps();
         });
     }

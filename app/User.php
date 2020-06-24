@@ -55,5 +55,10 @@ class User extends Authenticatable
         return $this->belongsTo('App\UserType');
     }
 
+    public function studentProfile()
+    {
+        return $this->hasOne('App\StudentProfile');
+    }
+
 
 }
