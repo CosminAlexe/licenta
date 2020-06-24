@@ -67,7 +67,7 @@ class StudentController extends Controller
         }
         else
         {
-            DB::insert('insert into internship_student (user_id, internship_id, status) values(?, ?, ?)', [$user->id, $internshipId, 'applied']);
+            DB::insert('insert into internship_student (user_id, internship_id, status) values(?, ?, ?)', [$user->id, $internshipId, 'in asteptare']);
             return redirect()->route('studentShowInternship',  $internshipId);
         }
 
