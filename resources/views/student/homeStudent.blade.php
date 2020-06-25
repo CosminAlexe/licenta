@@ -13,7 +13,7 @@
                 <div class="media flex-column flex-sm-row">
                     <div class="mr-sm-3 mb-2 mb-sm-0">
                         <a href="#">
-                            <img src="/images/placeholders/placeholder.jpg" class="rounded" width="44" height="44"
+                            <img src="{{$internship->user->picture}}" class="rounded" width="44" height="44"
                                  alt="">
                         </a>
                     </div>

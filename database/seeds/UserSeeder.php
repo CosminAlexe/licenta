@@ -17,6 +17,7 @@ class UserSeeder extends Seeder
             'name' => 'Cosmin Alexe',
             'email' => 'alexe.cosmin.97@gmail.com',
             'password' => Hash::make('Password123'),
+            'picture' => '/images/backgrounds/user_bg1.png',
             'user_type_id' => 1,
         ]);
 
@@ -24,6 +25,7 @@ class UserSeeder extends Seeder
             'name' => 'Robert Alexe',
             'email' => 'alexe.robert.97@gmail.com',
             'password' => Hash::make('Password123'),
+            'picture' => '/images/backgrounds/user_bg1.png',
             'user_type_id' => 1,
         ]);
 
@@ -31,6 +33,7 @@ class UserSeeder extends Seeder
             'name' => 'Angajator 1',
             'email' => 'angajator1@gmail.com',
             'password' => Hash::make('Password123'),
+            'picture' => '/images/backgrounds/user_bg3.jpg',
             'user_type_id' => 2,
         ]);
 
@@ -38,6 +41,7 @@ class UserSeeder extends Seeder
             'name' => 'Angajator 2',
             'email' => 'angajator2@gmail.com',
             'password' => Hash::make('Password123'),
+            'picture' => '/images/backgrounds/user_bg2.jpg',
             'user_type_id' => 2,
         ]);
     }

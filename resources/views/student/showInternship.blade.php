@@ -8,7 +8,7 @@
 
             <div class="media flex-column flex-md-row mb-4">
                 <a href="#" class="align-self-md-center mr-md-3 mb-2 mb-md-0">
-                    <img src="/images/placeholders/placeholder.jpg" class="rounded" width="44" height="44" alt="">
+                    <img src="{{$internship->user->picture}}" class="rounded" width="44" height="44" alt="">
                 </a>
 
                 <div class="media-body">
