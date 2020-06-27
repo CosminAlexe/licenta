@@ -1,4 +1,4 @@
-@extends('layouts.student')
+@extends('layouts.employer')
 
 @section('content')
 
@@ -11,9 +11,9 @@
             <div class="card card-body">
 
                 <div class="media flex-column flex-sm-row">
-                    <div class="mr-sm-3 mb-2 mb-sm-0">
-                        <a href="#">
-                            <img src="{{$internship->user->picture}}" class="rounded" width="44" height="44"
+                    <div class="my-auto mr-sm-3 mb-2>
+                        <a href="/employer-show-internship/{{$internship->id}}">
+                            <img src="{{$internship->user->picture}}" class="rounded" width="64" height="64"
                                  alt="">
                         </a>
                     </div>

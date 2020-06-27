@@ -17,7 +17,7 @@ class UserSeeder extends Seeder
             'name' => 'Cosmin Alexe',
             'email' => 'alexe.cosmin.97@gmail.com',
             'password' => Hash::make('Password123'),
-            'picture' => '/images/backgrounds/user_bg1.png',
+            'picture' => '/images/backgrounds/user_bg4.png',
             'user_type_id' => 1,
         ]);
 
@@ -25,7 +25,7 @@ class UserSeeder extends Seeder
             'name' => 'Robert Alexe',
             'email' => 'alexe.robert.97@gmail.com',
             'password' => Hash::make('Password123'),
-            'picture' => '/images/backgrounds/user_bg1.png',
+            'picture' => '/images/backgrounds/user_bg2.png',
             'user_type_id' => 1,
         ]);
 

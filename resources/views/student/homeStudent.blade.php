@@ -1,5 +1,26 @@
 @extends('layouts.student')
 
+@section('page-header')
+
+{{--    <div class="page-header page-header-light">--}}
+{{--        <div class="page-header-content header-elements-md-inline">--}}
+{{--            <div class="page-title d-flex">--}}
+{{--                <h4><i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold">Home</span> - Dashboard</h4>--}}
+{{--                <a href="#" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>--}}
+{{--            </div>--}}
+
+{{--            <div class="header-elements d-none">--}}
+{{--                <div class="d-flex justify-content-center">--}}
+{{--                    <a href="#" class="btn btn-link btn-float text-default"><i class="icon-bars-alt text-primary"></i><span>Statistics</span></a>--}}
+{{--                    <a href="#" class="btn btn-link btn-float text-default"><i class="icon-calculator text-primary"></i> <span>Invoices</span></a>--}}
+{{--                    <a href="#" class="btn btn-link btn-float text-default"><i class="icon-calendar5 text-primary"></i> <span>Schedule</span></a>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
+
+@endsection
+
 @section('content')
 
     <!-- Right content -->
@@ -11,9 +32,9 @@
                 <div class="card card-body">
 
                 <div class="media flex-column flex-sm-row">
-                    <div class="mr-sm-3 mb-2 mb-sm-0">
+                    <div class="my-auto mr-sm-3">
                         <a href="#">
-                            <img src="{{$internship->user->picture}}" class="rounded" width="44" height="44"
+                            <img src="{{$internship->user->picture}}" class="rounded" width="64" height="64"
                                  alt="">
                         </a>
                     </div>
@@ -33,8 +54,12 @@
 
                     </div>
 
-                    <div class="ml-sm-3 mt-2 mt-sm-0">
-                        <span class="badge bg-blue">New</span>
+                    <div class="ml-sm-3 my-auto">
+                        @if($internship->application)
+                            <span class="badge bg-blue {{$internship->application->status == 'acceptat' ? 'bg-green' : ''}} {{$internship->application->status == 'respins' ? 'bg-danger' : ''}}">{{$internship->application->status}}</span>
+                            @else
+                                <span class="badge bg-grey">nu ai aplicat</span>
+                        @endif
                     </div>
                 </div>
 

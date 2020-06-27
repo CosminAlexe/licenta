@@ -1,4 +1,4 @@
-@extends('layouts.student')
+@extends('layouts.employer')
 
 @section('content')
 
@@ -47,5 +47,45 @@
 
         </div>
     </div>
+
+    <!-- Applicants !-->
+
+    <div class="row">
+
+        @foreach($applicants as $applicant)
+
+            <div class="col-xl-6 col-md-6">
+                <div class="card card-body">
+                    <div class="media">
+                        <div class="mr-3">
+                            <a href="/employer-show-student/{{$applicant->id}}/from-internship/{{$internship->id}}">
+                                <img src="{{$applicant->picture}}" class="rounded-circle" width="62" height="62" alt="">
+                            </a>
+                        </div>
+
+                        <div class="media-body">
+
+                            <div class="media-title font-weight-semibold">
+                                <a href="/employer-show-student/{{$applicant->id}}/from-internship/{{$internship->id}}" class="text-dark">
+                                    {{$applicant->name}}
+                                </a>
+                            </div>
+
+                            <div class="text-muted">{{$applicant->studentProfile->faculty ? $applicant->studentProfile->faculty : '-'}} </div>
+                            <div class="text-muted">{{$applicant->studentProfile->university ? $applicant->studentProfile->university : '-'}} </div>
+
+                        </div>
+
+                        <div class="ml-3 align-self-center">
+                            <span class="badge bg-blue {{$applicant->application->status == 'acceptat' ? 'bg-green' : ''}} {{$applicant->application->status == 'respins' ? 'bg-danger' : ''}}">{{$applicant->application->status}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        @endforeach
+
+    </div>
+
 
 @endsection

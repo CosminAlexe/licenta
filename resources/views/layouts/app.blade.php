@@ -39,13 +39,11 @@
 <body>
 
 <!-- Main navbar -->
-<div class="navbar navbar-expand-md navbar-dark">
-    <div class="navbar-brand">
-        <a href="/home" class="d-inline-block">
-            <img src="/images/logo_light.png" alt="">
-        </a>
-    </div>
+<div class="navbar navbar-expand-md navbar-dark" style="height: 3rem;">
 
+    <a class="text-white m-auto font-weight-bold font-italic" href="{{route('studentHome')}}">
+        YourInternship
+    </a>
 
     <div class="collapse navbar-collapse" id="navbar-mobile">
 

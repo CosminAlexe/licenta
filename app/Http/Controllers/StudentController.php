@@ -6,6 +6,7 @@ use App\Category;
 use App\City;
 use App\Internship;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class StudentController extends Controller
@@ -23,6 +24,15 @@ class StudentController extends Controller
         if($user->userType->type === 'Student');
         {
             $internships = Internship::all();
+
+            foreach ($internships as $internship){
+                $application = DB::table('internship_student')
+                    ->where('user_id', '=', $user->id)
+                    ->where('internship_id', '=', $internship->id)
+                    ->first();
+                $internship->application = $application;
+            }
+
             $cities = City::all();
             $categories = Category::all();
             return view('student\homeStudent')->with(array(
@@ -71,5 +81,40 @@ class StudentController extends Controller
             return redirect()->route('studentShowInternship',  $internshipId);
         }
 
+    }
+
+    public function showProfile()
+    {
+        $user = auth()->user();
+
+        $profile = $user->studentProfile;
+
+        return view('student\editProfile')->with(array(
+            'user' => $user,
+            'profile' => $profile,
+        ));
+    }
+
+
+    public function editProfile(Request $request)
+    {
+        $user = auth()->user();
+        $profile = $user->studentProfile;
+
+        $user->name = $request->get('name');
+        $user->phone_number = $request->get('phone_number');
+        $user->save();
+
+        $profile->university = $request->get('university');
+        $profile->faculty = $request->get('faculty');
+        $profile->current_year = $request->get('current_year');
+        $profile->about_you = $request->get('about_you');
+        $profile->skills = $request->get('skills');
+        $profile->projects = $request->get('projects');
+        $profile->foreign_languages = $request->get('foreign_languages');
+        $profile->experience = $request->get('experience');
+        $profile->save();
+
+        return redirect()->route('studentShowProfile');
     }
 }

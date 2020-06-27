@@ -70,7 +70,7 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-            $user->picture = '/images/backgrounds/user_bg1.png',
+            'picture' => '/images/backgrounds/user_bg1.png',
             'user_type_id' => $data['user_type_id'],
         ]);
 

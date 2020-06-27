@@ -41,7 +41,7 @@
 <!-- Main navbar -->
 <div class="navbar navbar-expand-md navbar-dark">
 
-    <a class="text-white m-auto font-weight-bold font-italic" href="{{route('studentHome')}}">
+    <a class="text-white m-auto font-weight-bold font-italic" href="{{route('employerHome')}}">
         YourInternship
     </a>
 
@@ -67,7 +67,7 @@
                 </a>
 
                 <div class="dropdown-menu dropdown-menu-right">
-                    <a href="{{route('studentShowProfile')}}" class="dropdown-item"><i class="icon-user-plus"></i>Profilul Tau</a>
+                    <a href="{{route('employerShowProfile')}}" class="dropdown-item"><i class="icon-user-plus"></i>Profilul Tau</a>
                     <div class="dropdown-divider"></div>
                     <a href="{{ url('/logout') }}" class="dropdown-item"><i class="icon-switch2"></i> Logout</a>
                 </div>
@@ -85,8 +85,8 @@
     <div class="content-wrapper px-5">
 
         <!-- Page header -->
-        @yield('page-header')
-        <!-- /page header -->
+    @yield('page-header')
+    <!-- /page header -->
 
 
         <!-- Content area -->

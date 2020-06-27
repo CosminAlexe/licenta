@@ -65,7 +65,7 @@
                             <label for="user_type_id" class="col-md-4 col-form-label pb-0">{{ __('Tipul de utilizator') }}</label>
 
                             <div class="col-md-12">
-                                <select name="user_type_id" id="user_type_id" class="custom-select" >
+                                <select name="user_type_id" id="user_type_id" class="form-control select" >
                                     <option value="1">Student</option>
                                     <option value="2">Angajator</option>
                                 </select>
