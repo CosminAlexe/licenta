@@ -35,6 +35,7 @@ class StudentController extends Controller
 
             $cities = City::all();
             $categories = Category::all();
+
             return view('student\homeStudent')->with(array(
                 'internships' => $internships,
                 'categories' => $categories,

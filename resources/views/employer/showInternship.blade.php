@@ -14,7 +14,6 @@
                 <div class="media-body">
                     <h5 class="media-title font-weight-semibold">{{$internship->title}}</h5>
                     <ul class="list-inline list-inline-dotted text-muted mb-0">
-                        <li class="list-inline-item">{{$internship->user->name}}</li>
                         <li class="list-inline-item">{{$internship->city->name}}</li>
                     </ul>
                 </div>
@@ -43,6 +42,16 @@
                 <p>Incepe la data: {{date("d/m/Y", strtotime($internship->start_date))}}</p>
 
                 <p>Se incheie la data: {{date("d/m/Y", strtotime($internship->end_date))}}</p>
+            </div>
+
+            <div class="mb-4">
+                <h6 class="font-weight-semibold">Status Internship: Deschis</h6>
+            </div>
+
+            <div class="text-center align-self-md-center ml-md-3 mt-2 mt-md-0">
+                    <a href="/employer-show-edit-internship/{{$internship->id}}" class="btn bg-blue font-weight-bold">
+                        Modifica
+                    </a>
             </div>
 
         </div>

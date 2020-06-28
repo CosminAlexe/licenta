@@ -29,9 +29,16 @@
     <script src="/js/plugins/forms/selects/bootstrap_multiselect.js"></script>
     <script src="/js/plugins/ui/moment/moment.min.js"></script>
     <script src="/js/plugins/pickers/daterangepicker.js"></script>
+    <script src="/js/plugins/pickers/pickadate/picker.js"></script>
+    <script src="/js/plugins/pickers/pickadate/picker.date.js"></script>
+    <script src="/js/plugins/pickers/pickadate/picker.time.js"></script>
+    <script src="/js/plugins/pickers/pickadate/legacy.js"></script>
+
 
     <script src="/js/app.js"></script>
     <script src="/js/demo_pages/dashboard.js"></script>
+    <script src="/js/demo_pages/picker_date.js"></script>
+
     <!-- /theme JS files -->
 
 </head>
@@ -84,7 +91,7 @@
     <!-- Main content -->
     <div class="content-wrapper px-5">
 
-        <!-- Page header -->
+    <!-- Page header -->
     @yield('page-header')
     <!-- /page header -->
 

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
+use App\City;
 use App\Internship;
 use App\InternshipStudent;
 use App\User;
@@ -96,6 +98,31 @@ class EmployerController extends Controller
         $user = auth()->user();
         return View('employer/editProfile')->with(array(
             'user' => $user,
+        ));
+    }
+
+    public function addInternship()
+    {
+
+        $cities = City::all();
+        $categories = Category::all();
+
+        return View('employer/addInternship')->with(array(
+            'cities' => $cities,
+            'categories' => $categories,
+        ));
+    }
+
+    public function showEditInternship($internshipId)
+    {
+        $internship = Internship::find($internshipId);
+        $cities = City::all();
+        $categories = Category::all();
+
+        return View('employer/editInternship')->with(array(
+            'internship' => $internship,
+            'cities' => $cities,
+            'categories' => $categories,
         ));
     }
 }

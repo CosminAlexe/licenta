@@ -35,5 +35,7 @@ Route::get('/employer-show-student/{studentId}/from-internship/{internshipId}', 
 Route::get('/accept-student/{studentId}/at-internship/{internshipId}', 'EmployerController@acceptStudent')->name('acceptStudent');
 Route::get('/reject-student/{studentId}/at-internship/{internshipId}', 'EmployerController@rejectStudent')->name('rejectStudent');
 Route::get('/employer-show-profile', 'EmployerController@employerProfile')->name('employerShowProfile');
+Route::get('/employer-add-internship', 'EmployerController@addInternship')->name('employerAddInternship');
+Route::get('/employer-show-edit-internship/{id}', 'EmployerController@showEditInternship')->name('employerShowEditInternship');
 
 
