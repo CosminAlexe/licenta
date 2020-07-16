@@ -62,5 +62,10 @@ class User extends Authenticatable
         return $this->hasOne('App\StudentProfile');
     }
 
+    public function employerProfile()
+    {
+        return $this->hasOne('App\EmployerProfile');
+    }
+
 
 }

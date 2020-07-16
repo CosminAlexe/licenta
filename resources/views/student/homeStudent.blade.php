@@ -81,35 +81,51 @@
 
                 <div class="card">
                     <div class="card-body">
-                        <!-- Cities !-->
-                        <h6>Orase</h6>
-                        <div class="form-group">
-                            @foreach($cities as $city)
-                                <div class="form-check">
-                                    <label class="form-check-label">
-                                        <input type="checkbox" class="form-check-input">
-                                        {{$city->name}}
-                                    </label>
-                                </div>
-                            @endforeach
-                        </div>
+                        <form id="filter-form" method="POST" action="{{route('filter')}}">
+                            @csrf
+                            <!-- Cities !-->
+                            <h6>Orase</h6>
+                            <div class="form-group">
+                                @foreach($cities as $city)
+                                    <div class="form-check">
+                                        <label class="form-check-label">
+                                            <input onclick="document.getElementById('filter-form').submit();" type="checkbox" name="cities[]" value="{{$city->id}}" class="form-check-input"
+                                               @if($requestedCities)
+                                                    @if(in_array($city->id, $requestedCities))
+                                                        checked
+                                                    @endif
+                                                @endif
+                                            >
+                                            {{$city->name}}
+                                        </label>
+                                    </div>
+                                @endforeach
+                            </div>
 
-                        <!-- Cities !-->
+                            <!-- Cities !-->
 
-                        <!-- Categories !-->
-                        <h6>Categorii</h6>
-                        <div class="form-group">
-                            @foreach($categories as $category)
-                                <div class="form-check">
-                                    <label class="form-check-label">
-                                        <input type="checkbox" class="form-check-input">
-                                        {{$category->name}}
-                                    </label>
-                                </div>
-                            @endforeach
-                        </div>
+                            <!-- Categories !-->
+                            <h6>Categorii</h6>
+                            <div class="form-group">
+                                @foreach($categories as $category)
+                                    <div class="form-check">
+                                        <label class="form-check-label">
+                                            <input onclick="document.getElementById('filter-form').submit();" type="checkbox" name="categories[]" value="{{$category->id}}" class="form-check-input"
+                                            @if($requestedCategories)
+                                                @if(in_array($category->id, $requestedCategories))
+                                                    checked
+                                                @endif
+                                            @endif
+                                                >
+                                            {{$category->name}}
+                                        </label>
+                                    </div>
+                                @endforeach
+                            </div>
 
-                        <!-- Categories !-->
+                            <!-- Categories !-->
+                        </form>
+
                     </div>
                 </div>
 

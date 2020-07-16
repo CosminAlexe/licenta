@@ -24,6 +24,21 @@
                             <input type="text" class="form-control" name="phone_number" placeholder="Numarul tau de telefon" value="{{$user->phone_number}}">
                         </div>
 
+                        <div class="form-group">
+                            <label>Profilul de Facebook:</label>
+                            <input type="text" class="form-control" name="phone_number" placeholder="Profiulul de Facebook" value="">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Website</label>
+                            <input type="text" class="form-control" name="phone_number" placeholder="Website" value="">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Despre tine:</label>
+                            <textarea rows="4" cols="4" class="form-control" name="about_you"></textarea>
+                        </div>
+
                         <div class="text-center">
                             <button type="submit" class="btn bg-teal-400">Modifica profilul<i class="icon-paperplane ml-2"></i></button>
                         </div>

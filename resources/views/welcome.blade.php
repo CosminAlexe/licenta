@@ -98,3 +98,9 @@
         </div>
     </body>
 </html>
+
+
+<form method="POST" action="/change-email">
+    @csrf
+    ...
+</form>

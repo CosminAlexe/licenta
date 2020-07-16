@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('auth/login');
+    return view('firstPage');
 });
 
 Auth::routes();
@@ -28,6 +28,7 @@ Route::get('/student-show-internship/{id}', 'StudentController@showInternship')-
 Route::get('/student-apply/{id}', 'StudentController@applyForInternship')->name('studentApplyForInternship');
 Route::get('/student-show-profile', 'StudentController@showProfile')->name('studentShowProfile');
 Route::post('/student-edit-profile', 'StudentController@editProfile')->name('studentEditProfile');
+Route::post('/internships-filtered', 'StudentController@filter')->name('filter');
 
 Route::get('/employer-home', 'EmployerController@index')->name('employerHome');
 Route::get('/employer-show-internship/{id}', 'EmployerController@showInternship')->name('employerShowInternship');

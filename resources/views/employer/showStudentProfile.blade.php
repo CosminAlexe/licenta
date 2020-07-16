@@ -82,12 +82,10 @@
                     <div class="card-body">
 
                         <h6 class="font-weight-bold">Status: {{$application->status}}</h6>
-                        @if($application->status != 'acceptat')
-                            <div class="text-center">
-                                <a href="/accept-student/{{$student->id}}/at-internship/{{$internship->id}}" class="btn btn-success">Accepta</a>
-                                <a href="/reject-student/{{$student->id}}/at-internship/{{$internship->id}}" class="btn btn-danger">Respinge</a>
-                            </div>
-                        @endif
+                        <div class="text-center">
+                            <a href="/accept-student/{{$student->id}}/at-internship/{{$internship->id}}" class="btn btn-success">Accepta</a>
+                            <a href="/reject-student/{{$student->id}}/at-internship/{{$internship->id}}" class="btn btn-danger">Respinge</a>
+                        </div>
 
                     </div>
                 </div>

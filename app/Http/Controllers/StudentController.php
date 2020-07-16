@@ -40,6 +40,8 @@ class StudentController extends Controller
                 'internships' => $internships,
                 'categories' => $categories,
                 'cities' => $cities,
+                'requestedCities' => null,
+                'requestedCategories' => null,
             ));
         }
     }
@@ -117,5 +119,63 @@ class StudentController extends Controller
         $profile->save();
 
         return redirect()->route('studentShowProfile');
+    }
+
+    public function filter(Request $request)
+    {
+        $user = auth()->user();
+
+        if($user->userType->type === 'Student');
+        {
+
+            $cities = City::all();
+            $categories = Category::all();
+
+            if($request->input('cities')){
+                $requestedCities = $request->input('cities');
+                $requestedCitiesForQuery = $request->input('cities');
+
+            }
+            else{
+                foreach ($cities as $city)
+                {
+                    $requestedCities = null;
+                    $requestedCitiesForQuery[$city->id] = $city->id;
+                }
+            }
+
+            if($request->input('categories')){
+                $requestedCategories = $request->input('categories');
+                $requestedCategoriesForQuery = $request->input('categories');
+            }
+            else{
+                foreach ($categories as $category)
+                {
+                    $requestedCategories = null;
+                    $requestedCategoriesForQuery[$category->id] = $category->id;
+                }
+            }
+
+            $internships = Internship::whereIn('category_id', $requestedCategoriesForQuery)
+                ->whereIn('city_id', $requestedCitiesForQuery)
+                ->get();
+
+            foreach ($internships as $internship){
+                $application = DB::table('internship_student')
+                    ->where('user_id', '=', $user->id)
+                    ->where('internship_id', '=', $internship->id)
+                    ->first();
+
+                $internship->application = $application;
+            }
+
+            return view('student\homeStudent')->with(array(
+                'internships' => $internships,
+                'categories' => $categories,
+                'cities' => $cities,
+                'requestedCities' => $requestedCities,
+                'requestedCategories' => $requestedCategories
+            ));
+        }
     }
 }

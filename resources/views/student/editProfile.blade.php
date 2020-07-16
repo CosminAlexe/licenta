@@ -98,7 +98,9 @@
 
                         <h6 class="font-weight-semibold mb-0">{{$user->name}}</h6>
                         <p class=""><i class="icon-mail5 font-weight-bold"></i> {{$user->email}}</p>
-
+                        @if($user->phone_number)
+                            <p class=""><i class="icon-phone2 font-weight-bold"></i> {{$user->phone_number}}</p>
+                        @endif
                     </div>
                 </div>
 

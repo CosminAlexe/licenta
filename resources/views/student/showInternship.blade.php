@@ -93,6 +93,10 @@
                         @if($internship->user->phone_number)
                             <p class=""><i class="icon-phone2 font-weight-bold"></i> {{$internship->user->phone_number}}</p>
                         @endif
+                        <p class=""><i class="icon-chrome font-weight-bold text-yellow"></i> <a href="#">angajator1.com</a></p>
+                        <p class=""><i class="icon-facebook2 font-weight-bold text-blue"></i> <a href="#">facebook.com/angajator1</a></p>
+                        <h6 class="font-weight-bold mt-4">Despre Angajator</h6>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                     </div>
                 </div>
             </div>
